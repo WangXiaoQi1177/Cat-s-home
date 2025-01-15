@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>胡胡美照</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /* 背景渐变 */
+            background-image: linear-gradient(to right,
+                    #f0b5cf 0%,
+                    #b7b5ff 100%);
+        }
+
+        .container{
+            position:absolute;
+            width:100vw;
+            height:100vh;
+            overflow:hidden;
+            display:flex;
+            justify-content: center;
+            align-items:center;
+        }
+
+        .slider{
+            position:absolute;
+            inset: 80px 200px 80px 80px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px #000;
+        }
+
+        .box{
+            position: absolute;
+            top:70%;
+            transform: translateY(-50%);
+            width:240px;
+            height: 320px;
+            background: var(--img);
+            background-size:cover;
+            background-position:center;
+            border-radius: 20px;
+            transition: 0.5s;
+            box-shadow: 0 0px 5px rgba(0,0,0,0.1);
+            border: 5px solid #fff;         
+        }
+
+        .box:nth-child(1),
+        .box:nth-child(2) {
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height: 100%;
+            transform: translateY(0);
+            box-shadow: 0 25px 50px rgba(0,0,0,0);         
+        }
+
+        .box:nth-child(3){
+            left: calc(82% + 240px);
+        }
+
+        .box:nth-child(4){
+            left: calc(82% + 500px);
+        }
+
+        .box:nth-child(5){
+            left:calc(82% + 760px);
+        }
+        .box:nth-child(6){
+            left:calc(82% + 1020px);
+        }
+
+        .box:nth-child(7){
+            left:calc(82% + 1280px);
+        }
+
+        .box:nth-child(8){
+            left:calc(82% + 1540px);
+        }
+        .box:nth-child(9){
+            left:calc(82% + 1800px);
+        }
+
+        .box:nth-child(10){
+            left:calc(82% + 2060px);
+        }
+
+        .box:nth-child(11){
+            left:calc(82% + 2320px);
+        }
+        .box:nth-child(12){
+            left:calc(82% + 2580px);
+        }
+
+        .box:nth-child(13){
+            left:calc(82% + 2840px);
+        }
+
+        .box:nth-child(14){
+            left:calc(82% + 3100px);
+        }
+        .box:nth-child(15){
+            left:calc(82% + 3360px);
+        }
+
+        .box:nth-child(16){
+            left:calc(82% + 3620px);
+        }
+
+        .box:nth-child(17){
+            left:calc(82% + 3880px);
+        }
+        .box:nth-child(18){
+            left:calc(82% + 4140px);
+        }
+
+        .box:nth-child(19){
+            left:calc(82% + 4400px);
+        }
+
+        .box:nth-child(20){
+            left:calc(82% + 4660px);
+        }
+        .box:nth-child(21){
+            left:calc(82% + 4920px);
+        }
+
+        .box:nth-child(22){
+            left:calc(82% + 5180px);
+        }
+
+        .box:nth-child(23){
+            left:calc(82% + 5440px);
+        }
+        .box:nth-child(24){
+            left:calc(82% + 5700px);
+        }
+
+        .box:nth-child(25){
+            left:calc(82% + 5960px);
+        }
+
+        .box:nth-child(26){
+            left:calc(82% + 6220px);
+        }
+        .box:nth-child(27){
+            left:calc(82% + 6480px);
+        }
+
+        .box:nth-child(28){
+            left:calc(82% + 6740px);
+        }
+
+        .box:nth-child(29){
+            left:calc(82% + 7000px);
+        }
+        .box:nth-child(30){
+            left:calc(82% + 7260px);
+        }
+
+        .box:nth-child(31){
+            left:calc(82% + 7520px);
+        }
+
+        .box:nth-child(32){
+            left:calc(82% + 7780px);
+        }
+        .box:nth-child(33){
+            left:calc(82% + 8040px);
+        }
+        .box:nth-child(34){
+            left:calc(82% + 8300px);
+        }
+        .box:nth-child(35){
+            left:calc(82% + 8560px);
+        }
+        .box:nth-child(36){
+            left:calc(82% + 8820px);
+        }
+        .box:nth-child(37){
+            left:calc(82% + 9080px);
+        }
+        .box:nth-child(38){
+            left:calc(82% + 9340px);
+        }
+        .box:nth-child(39){
+            left:calc(82% + 9600px);
+        }
+        .box:nth-child(40){
+            left:calc(82% + 9860px);
+        }
+        .box:nth-child(41){
+            left:calc(82% + 10120px);
+        }
+        .box:nth-child(42){
+            left:calc(82% + 10380px);
+        }
+        .box:nth-child(43){
+            left:calc(82% + 10640px);
+        }
+        .box:nth-child(44){
+            left:calc(82% + 10900px);
+        }
+        .box:nth-child(45){
+            left:calc(82% + 11160px);
+        }
+        .box:nth-child(46){
+            left:calc(82% + 11420px);
+        }
+        .box:nth-child(47){
+            left:calc(82% + 11680px);
+        }
+        .box:nth-child(48){
+            left:calc(82% + 11940px);
+        }
+        .box:nth-child(49){
+            left:calc(82% + 12200px);
+        }
+        .box:nth-child(50){
+            left:calc(82% + 12460px);
+        }
+        .box:nth-child(51){
+            left:calc(82% + 12720px);
+        }
+        .box:nth-child(52){
+            left:calc(82% + 12980px);
+        }
+        .box:nth-child(53){
+            left:calc(82% + 13240px);
+        }
+        .box:nth-child(54){
+            left:calc(82% + 13500px);
+        }
+        .box:nth-child(55){
+            left:calc(82% + 13760px);
+        }
+        .box:nth-child(56){
+            left:calc(82% + 14020px);
+        }
+        .box:nth-child(57){
+            left:calc(82% + 14280px);
+        }
+        .box:nth-child(58){
+            left:calc(82% + 14540px);
+        }
+        .box:nth-child(59){
+            left:calc(82% + 14800px);
+        }
+        .box:nth-child(60){
+            left:calc(82% + 15060px);
+        }
+        .box:nth-child(61){
+            left:calc(82% + 15320px);
+        }
+        .box:nth-child(62){
+            left:calc(82% + 15580px);
+        }
+        .box:nth-child(63){
+            left:calc(82% + 15840px);
+        }
+        .box:nth-child(64){
+            left:calc(82% + 16100px);
+        }
+        .box:nth-child(65){
+            left:calc(82% + 16360px);
+        }
+        .box:nth-child(66){
+            left:calc(82% + 16620px);
+        }
+        .box:nth-child(67){
+            left:calc(82% + 16880px);
+        }
+        .box:nth-child(68){
+            left:calc(82% + 17140px);
+        }
+        .box:nth-child(69){
+            left:calc(82% + 17400px);
+        }
+        .box:nth-child(70){
+            left:calc(82% + 17660px);
+        }
+        .box:nth-child(71){
+            left:calc(82% + 17920px);
+        }
+        .box:nth-child(72){
+            left:calc(82% + 18180px);
+        }
+        .box:nth-child(73){
+            left:calc(82% + 18440px);
+        }
+        .box:nth-child(74){
+            left:calc(82% + 18700px);
+        }
+        .box:nth-child(75){
+            left:calc(82% + 18960px);
+        }
+        .box:nth-child(76){
+            left:calc(82% + 19220px);
+        }
+        .box:nth-child(77){
+            left:calc(82% + 19480px);
+        }
+        .box:nth-child(78){
+            left:calc(82% + 19740px);
+        }
+        .box:nth-child(79){
+            left:calc(82% + 20000px);
+        }
+        .box:nth-child(80){
+            left:calc(82% + 20260px);
+        }
+        .box:nth-child(81){
+            left:calc(82% + 20520px);
+        }
+        .box:nth-child(82){
+            left:calc(82% + 20780px);
+        }
+        .box:nth-child(83){
+            left:calc(82% + 21040px);
+        }
+        .box:nth-child(84){
+            left:calc(82% + 21300px);
+        }
+        .box:nth-child(85){
+            left:calc(82% + 21560px);
+        }
+        .box:nth-child(86){
+            left:calc(82% + 21820px);
+        }
+        .box:nth-child(87){
+            left:calc(82% + 22080px);
+        }
+        .box:nth-child(88){
+            left:calc(82% + 22340px);
+        }
+        .box:nth-child(89){
+            left:calc(82% + 22600px);
+        }
+        .box:nth-child(90){
+            left:calc(82% + 22860px);
+        }
+        .box:nth-child(91){
+            left:calc(82% + 23120px);
+        }
+        .box:nth-child(92){
+            left:calc(82% + 23380px);
+        }
+        .box:nth-child(93){
+            left:calc(82% + 23640px);
+        }
+        .box:nth-child(94){
+            left:calc(82% + 23900px);
+        }
+        .box:nth-child(95){
+            left:calc(82% + 24160px);
+        }
+        
+        .buttons {
+            position:absolute;
+            bottom:15px;
+            display: flex;
+            gap:20px;
+        }
+
+        .buttons span{
+            position: relative;
+            width:50px;
+            height: 50px;
+            background: #111;
+            cursor: pointer;
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            border-radius: 50%;
+            color:#fff;
+            font-size:24px;
+            font-weight: bold;
+        }
+
+        .buttons span:active{
+            opacity: 0.5;
+        }
+
+        @media(max-width:900px){
+            .slider{
+                position: absolute;
+                inset: 40px 40px 200px 40px;
+            }
+
+            .box{
+                width:100px;
+                height: 100px;
+                top:initial;
+                bottom:-170px;
+                box-shadow: 0 10px 50px rgba(0,0,0,0.5);
+            }
+
+            .box:nth-child(1),
+            .box:nth-child(2){
+                top:initial;
+                bottom:0px;
+            }
+            .box:nth-child(3){
+                left:0;
+            }
+
+            .box:nth-child(4){
+                left:120px;
+            }
+
+            .box:nth-child(5){
+                left:240px;
+            }
+
+            .box:nth-child(6){
+                left:360px;
+            }
+            .box:nth-child(7){
+                left:480px;
+            }
+
+            .box:nth-child(8){
+                left:600px;
+            }
+
+            .box:nth-child(9){
+                left:720px;
+            }
+
+            .box:nth-child(10){
+                left:840px;
+            }
+            .box:nth-child(11){
+                left:960px;
+            }
+
+            .box:nth-child(12){
+                left:1080px;
+            }
+
+            .box:nth-child(13){
+                left:1200px;
+            }
+
+            .box:nth-child(14){
+                left:1320px;
+            }
+            .box:nth-child(15){
+                left:1440px;
+            }
+
+            .box:nth-child(16){
+                left:1560px;
+            }
+
+            .box:nth-child(17){
+                left:1680px;
+            }
+
+            .box:nth-child(18){
+                left:1800px;
+            }
+            .box:nth-child(19){
+                left:1920px;
+            }
+
+            .box:nth-child(20){
+                left:2040px;
+            }
+
+            .box:nth-child(21){
+                left:2160px;
+            }
+
+            .box:nth-child(22){
+                left:2280px;
+            }
+            
+            .box:nth-child(23){
+                left:2400px;
+            }
+
+            .box:nth-child(24){
+                left:2520px;
+            }
+
+            .box:nth-child(25){
+                left:2640px;
+            }
+            .box:nth-child(26){
+                left:2760px;
+            }
+
+            .box:nth-child(27){
+                left:2880px;
+            }
+
+            .box:nth-child(28){
+                left:3000px;
+            }
+
+            .box:nth-child(29){
+                left:3120px;
+            }
+            .box:nth-child(30){
+                left:3240px;
+            }
+
+            .box:nth-child(31){
+                left:3360px;
+            }
+
+            .box:nth-child(32){
+                left:3480px;
+            }
+
+            .box:nth-child(33){
+                left:3600px;
+            }
+
+            .box:nth-child(34){
+                left:3720px;
+            }
+
+            .box:nth-child(35){
+                left:3840px;
+            }
+
+            .box:nth-child(36){
+                left:3960px;
+            }
+
+            .box:nth-child(37){
+                left:4080px;
+            }
+
+            .box:nth-child(38){
+                left:4200px;
+            }
+
+            .box:nth-child(39){
+                left:4320px;
+            }
+
+            .box:nth-child(40){
+                left:4440px;
+            }
+            .box:nth-child(41){
+                left:4560px;
+            }
+
+            .box:nth-child(42){
+                left:4680px;
+            }
+
+            .box:nth-child(43){
+                left:4800px;
+            }
+
+            .box:nth-child(44){
+                left:4920px;
+            }
+
+            .box:nth-child(45){
+                left:5040px;
+            }
+
+            .box:nth-child(46){
+                left:5160px;
+            }
+
+            .box:nth-child(47){
+                left:5280px;
+            }
+
+            .box:nth-child(48){
+                left:5400px;
+            }
+
+            .box:nth-child(49){
+                left:5520px;
+            }
+
+            .box:nth-child(50){
+                left:5640px;
+            }
+
+            .box:nth-child(51){
+                left:5760px;
+            }
+
+            .box:nth-child(52){
+                left:5880px;
+            }
+
+            .box:nth-child(53){
+                left:6000px;
+            }
+
+            .box:nth-child(54){
+                left:6120px;
+            }
+
+            .box:nth-child(55){
+                left:6240px;
+            }
+
+            .box:nth-child(56){
+                left:6360px;
+            }
+
+            .box:nth-child(57){
+                left:6480px;
+            }
+
+            .box:nth-child(58){
+                left:6600px;
+            }
+
+            .box:nth-child(59){
+                left:6720px;
+            }
+
+            .box:nth-child(60){
+                left:6840px;
+            }
+
+            .box:nth-child(61){
+                left:6960px;
+            }
+
+            .box:nth-child(62){
+                left:7080px;
+            }
+
+            .box:nth-child(63){
+                left:7200px;
+            }
+
+            .box:nth-child(64){
+                left:7320px;
+            }
+
+            .box:nth-child(65){
+                left:7440px;
+            }
+
+            .box:nth-child(66){
+                left:7560px;
+            }
+
+            .box:nth-child(67){
+                left:7680px;
+            }
+
+            .box:nth-child(68){
+                left:7800px;
+            }
+
+            .box:nth-child(69){
+                left:7920px;
+            }
+
+            .box:nth-child(70){
+                left:8040px;
+            }
+
+            .box:nth-child(71){
+                left:8160px;
+            }
+
+            .box:nth-child(72){
+                left:8280px;
+            }
+
+            .box:nth-child(73){
+                left:8400px;
+            }
+            
+            .box:nth-child(74){
+                left:8520px;
+            }
+
+            .box:nth-child(75){
+                left:8640px;
+            }
+
+            .box:nth-child(76){
+                left:8760px;
+            }
+
+            .box:nth-child(77){
+                left:8880px;
+            }
+
+            .box:nth-child(78){
+                left:9000px;
+            }
+
+            .box:nth-child(79){
+                left:9120px;
+            }
+
+            .box:nth-child(80){
+                left:9240px;
+            }
+
+            .box:nth-child(81){
+                left:9360px;
+            }
+
+            .box:nth-child(82){
+                left:9480px;
+            }
+
+            .box:nth-child(83){
+                left:9600px;
+            }
+
+            .box:nth-child(84){
+                left:9720px;
+            }
+
+            .box:nth-child(85){
+                left:9840px;
+            }
+
+            .box:nth-child(86){
+                left:9960px;
+            }
+
+            .box:nth-child(87){
+                left:10080px;
+            }
+
+            .box:nth-child(88){
+                left:10200px;
+            }
+
+            .box:nth-child(89){
+                left:10320px;
+            }
+
+            .box:nth-child(90){
+                left:10440px;
+            }
+
+            .box:nth-child(91){
+                left:10560px;
+            }
+
+            .box:nth-child(92){
+                left:10680px;
+            }
+
+            .box:nth-child(93){
+                left:10800px;
+            }
+
+            .box:nth-child(94){
+                left:10920px;
+            }
+
+            .box:nth-child(95){
+                left:1104px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    
+    <div class="container">
+        <div class="slider">
+            <div class="box" style="--img: url('./image/01.jpg')"></div> 
+            <div class="box" style="--img: url('./image/02.jpg')"></div>    
+            <div class="box" style="--img: url('./image/03.jpg')"></div>    
+            <div class="box" style="--img: url('./image/04.jpg')"></div>    
+            <div class="box" style="--img: url('./image/05.jpg')"></div>    
+            <div class="box" style="--img: url('./image/06.jpg')"></div>    
+            <div class="box" style="--img: url('./image/07.jpg')"></div>
+            <div class="box" style="--img: url('./image/08.jpg')"></div> 
+            <div class="box" style="--img: url('./image/09.jpg')"></div>    
+            <div class="box" style="--img: url('./image/10.jpg')"></div>    
+            <div class="box" style="--img: url('./image/11.jpg')"></div>    
+            <div class="box" style="--img: url('./image/12.jpg')"></div>    
+            <div class="box" style="--img: url('./image/13.jpg')"></div>    
+            <div class="box" style="--img: url('./image/14.jpg')"></div>
+            <div class="box" style="--img: url('./image/15.jpg')"></div> 
+            <div class="box" style="--img: url('./image/16.jpg')"></div>    
+            <div class="box" style="--img: url('./image/17.jpg')"></div>    
+            <div class="box" style="--img: url('./image/18.jpg')"></div>    
+            <div class="box" style="--img: url('./image/19.jpg')"></div>    
+            <div class="box" style="--img: url('./image/20.jpg')"></div>    
+            <div class="box" style="--img: url('./image/21.jpg')"></div>
+            <div class="box" style="--img: url('./image/22.jpg')"></div> 
+            <div class="box" style="--img: url('./image/23.jpg')"></div>    
+            <div class="box" style="--img: url('./image/24.jpg')"></div>    
+            <div class="box" style="--img: url('./image/25.jpg')"></div>    
+            <div class="box" style="--img: url('./image/26.jpg')"></div>    
+            <div class="box" style="--img: url('./image/27.jpg')"></div>    
+            <div class="box" style="--img: url('./image/28.jpg')"></div>
+            <div class="box" style="--img: url('./image/29.jpg')"></div> 
+            <div class="box" style="--img: url('./image/30.jpg')"></div>    
+            <div class="box" style="--img: url('./image/31.jpg')"></div>    
+            <div class="box" style="--img: url('./image/32.jpg')"></div>    
+            <div class="box" style="--img: url('./image/33.jpg')"></div>    
+            <div class="box" style="--img: url('./image/34.jpg')"></div>    
+            <div class="box" style="--img: url('./image/35.jpg')"></div>
+            <div class="box" style="--img: url('./image/36.jpg')"></div> 
+            <div class="box" style="--img: url('./image/37.jpg')"></div>    
+            <div class="box" style="--img: url('./image/38.jpg')"></div>    
+            <div class="box" style="--img: url('./image/39.jpg')"></div>    
+            <div class="box" style="--img: url('./image/40.jpg')"></div>    
+            <div class="box" style="--img: url('./image/41.jpg')"></div>    
+            <div class="box" style="--img: url('./image/42.jpg')"></div>
+            <div class="box" style="--img: url('./image/43.jpg')"></div> 
+            <div class="box" style="--img: url('./image/44.jpg')"></div>    
+            <div class="box" style="--img: url('./image/45.jpg')"></div>    
+            <div class="box" style="--img: url('./image/46.jpg')"></div>    
+            <div class="box" style="--img: url('./image/47.jpg')"></div>    
+            <div class="box" style="--img: url('./image/48.jpg')"></div>    
+            <div class="box" style="--img: url('./image/49.jpg')"></div>
+            <div class="box" style="--img: url('./image/50.jpg')"></div> 
+            <div class="box" style="--img: url('./image/51.jpg')"></div>    
+            <div class="box" style="--img: url('./image/52.jpg')"></div>    
+            <div class="box" style="--img: url('./image/53.jpg')"></div>    
+            <div class="box" style="--img: url('./image/54.jpg')"></div>    
+            <div class="box" style="--img: url('./image/55.jpg')"></div>    
+            <div class="box" style="--img: url('./image/56.jpg')"></div>
+            <div class="box" style="--img: url('./image/57.jpg')"></div> 
+            <div class="box" style="--img: url('./image/58.jpg')"></div>    
+            <div class="box" style="--img: url('./image/59.jpg')"></div>    
+            <div class="box" style="--img: url('./image/60.jpg')"></div>    
+            <div class="box" style="--img: url('./image/61.jpg')"></div>    
+            <div class="box" style="--img: url('./image/62.jpg')"></div>    
+            <div class="box" style="--img: url('./image/63.jpg')"></div>
+            <div class="box" style="--img: url('./image/64.jpg')"></div> 
+            <div class="box" style="--img: url('./image/65.jpg')"></div>    
+            <div class="box" style="--img: url('./image/66.jpg')"></div>    
+            <div class="box" style="--img: url('./image/67.jpg')"></div>    
+            <div class="box" style="--img: url('./image/68.jpg')"></div>    
+            <div class="box" style="--img: url('./image/69.jpg')"></div>    
+            <div class="box" style="--img: url('./image/70.jpg')"></div>
+            <div class="box" style="--img: url('./image/71.jpg')"></div> 
+            <div class="box" style="--img: url('./image/72.jpg')"></div>    
+            <div class="box" style="--img: url('./image/73.jpg')"></div>    
+            <div class="box" style="--img: url('./image/74.jpg')"></div>    
+            <div class="box" style="--img: url('./image/75.jpg')"></div>    
+            <div class="box" style="--img: url('./image/76.jpg')"></div>    
+            <div class="box" style="--img: url('./image/77.jpg')"></div>
+            <div class="box" style="--img: url('./image/78.jpg')"></div> 
+            <div class="box" style="--img: url('./image/79.jpg')"></div>    
+            <div class="box" style="--img: url('./image/80.jpg')"></div>    
+            <div class="box" style="--img: url('./image/81.jpg')"></div>    
+            <div class="box" style="--img: url('./image/82.jpg')"></div>    
+            <div class="box" style="--img: url('./image/83.jpg')"></div>    
+            <div class="box" style="--img: url('./image/84.jpg')"></div>
+            <div class="box" style="--img: url('./image/85.jpg')"></div>    
+            <div class="box" style="--img: url('./image/86.jpg')"></div>    
+            <div class="box" style="--img: url('./image/87.jpg')"></div>
+            <div class="box" style="--img: url('./image/88.jpg')"></div> 
+            <div class="box" style="--img: url('./image/89.jpg')"></div>    
+            <div class="box" style="--img: url('./image/90.jpg')"></div>    
+            <div class="box" style="--img: url('./image/91.jpg')"></div>    
+            <div class="box" style="--img: url('./image/92.jpg')"></div>    
+            <div class="box" style="--img: url('./image/93.jpg')"></div>    
+            <div class="box" style="--img: url('./image/94.jpg')"></div>
+            <div class="box" style="--img: url('./image/95.jpg')"></div>
+        </div>
+        <div class="buttons">
+            <span class="prev">&lt;</span>
+            <span class="next">&gt;</span>
+        </div>
+
+    </div>
+</body>
+<script>
+    let next=document.querySelector(".next");
+    let prev=document.querySelector(".prev");
+    let slider=document.querySelector(".slider");
+    next.addEventListener("click",function(){
+        //获取所有幻灯片
+        let box=document.querySelectorAll(".box");
+        //将第一个幻灯片移到列表的最后
+        slider.appendChild(box[0]);
+    });
+
+    prev.addEventListener("click",function(){
+        let box=document.querySelectorAll(".box");
+        //将第一个幻灯片移到列表的最前
+        slider.prepend(box[box.length-1]);
+    });
+</script>
+</html>
